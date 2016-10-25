@@ -69,7 +69,7 @@ public class CustomAdapter extends BaseAdapter {
 			day = (TextView) v.findViewById (R.id.days);
 			time = (TextView) v.findViewById (R.id.time);
 			status = (SwitchCompat) v.findViewById (R.id.status);
-			Typeface f = Typeface.createFromAsset (mContext.getAssets (),"fonts/moon.otf");
+			Typeface f = Typeface.createFromAsset (mContext.getAssets (),"fonts/gotham_book.ttf");
 			name.setTypeface (f);
 			day.setTypeface (f);
 			time.setTypeface (f);

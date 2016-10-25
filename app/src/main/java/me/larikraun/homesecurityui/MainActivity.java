@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
 		setContentView (R.layout.activity_main);
 		ArrayList<KeyHolderModel> keyHolderModels = new ArrayList<> ();
 		KeyHolderModel keyHolder1 = new KeyHolderModel ("Omolara Adejuwon", "Everyday", "12:00pm to 3:00pm", "1");
-		KeyHolderModel keyHolder2 = new KeyHolderModel ("Oreoluwa Adejuwon", "Everyday", "12:00pm to 3:00pm", "0");
-		KeyHolderModel keyHolder3 = new KeyHolderModel ("Adejumoke Adejuwon", "Everyday", "12:00pm to 3:00pm", "1");
+		KeyHolderModel keyHolder2 = new KeyHolderModel ("Adejumoke Adejuwon", "Everyday", "12:00pm to 3:00pm", "0");
+		KeyHolderModel keyHolder3 = new KeyHolderModel ("Oreoluwa Adejuwon", "Everyday", "12:00pm to 3:00pm", "1");
 		KeyHolderModel keyHolder4 = new KeyHolderModel ("Adeyimika Adejuwon", "Everyday", "12:00pm to 3:00pm", "1");
 		keyHolderModels.add (keyHolder1);
 		keyHolderModels.add (keyHolder2);

@@ -57,9 +57,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/lock"
                 android:layout_centerHorizontal="true"
-                android:textSize="15dp"
+                android:fontFamily="serif"
                 android:text="UNLOCKED"
-                android:textColor="@color/ivory"/>
+                android:textColor="@color/ivory"
+                android:textSize="15dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,6 +68,7 @@
                 android:layout_below="@+id/lockstate"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="3dp"
+                android:fontFamily="serif"
                 android:text="Tap to lock"
                 android:textColor="@color/ivory"
                 android:textSize="12dp"/>
@@ -83,11 +85,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
         android:gravity="center"
         android:text="KEYHOLDERS"
         android:textColor="@color/greenWhite"
-        android:textStyle="bold"
-        android:textSize="15dp"/>
+        android:textSize="15dp"
+        android:textStyle="bold"/>
 
     <ListView
         android:id="@+id/keyHoldersList"
