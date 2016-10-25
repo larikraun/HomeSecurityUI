@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	@Override
 	public void onBackPressed () {
 		if (v2 != null) {
+			clearPassFields ();
 			((ViewGroup) v2.getParent ()).removeView (v2);
 		} else {
 			super.onBackPressed ();
