@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -123,6 +124,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		if (count < 4) {
 			v2.findViewById (passFields.get (count)).setBackground (getResources ().getDrawable (R.drawable.white_circular_fill));
 			count++;
+		}
+		if (count > 3) {
+			Toast.makeText (MainActivity.this, "Chill. Let me verify your passcode", Toast.LENGTH_LONG).show ();
 		}
 	}
 }
