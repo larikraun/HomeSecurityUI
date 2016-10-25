@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="darkTangerine">#F4AC0F </color>
+    <color name="darkTangerineTransparent">#D9F4AC0F </color>
+    <color name="butterCup">#D5971A </color>
+    <color name="greenWhite">#D4D4D3 </color>
+    <color name="anzac">#C38B44 </color>
+    <color name="superNova">#FFBF36 </color>
+    <color name="ivory">#F8F8F7 </color>
+</resources>
