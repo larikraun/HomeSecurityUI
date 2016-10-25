@@ -59,7 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		keyHolderList = (ListView) findViewById (R.id.keyHoldersList);
 		mImageView = (ImageView) findViewById (R.id.lock);
 		keyHolderList.setAdapter (mCustomAdapter);
-		mImageView.setOnClickListener (this);LayoutInflater inflater = LayoutInflater.from (MainActivity.this);
+		mImageView.setOnClickListener (this);
+		LayoutInflater inflater = LayoutInflater.from (MainActivity.this);
 		v2 = inflater.inflate (R.layout.lock_screen, null, false);
 		cancel = (TextView) v2.findViewById (R.id.cancel);
 		cancel.setOnClickListener (this);
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	}
 
 	private void clearPassFields () {
+		count = 0;
 		for (int i : passFields) {
 			v2.findViewById (i).setBackground (getResources ().getDrawable (R.drawable.white_circular_border, null));
 		}
