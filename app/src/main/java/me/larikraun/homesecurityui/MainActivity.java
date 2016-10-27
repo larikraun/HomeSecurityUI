@@ -7,16 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-	ListView keyHolderList;
+	ExpandableListView keyHolderList;
 	CustomAdapter mCustomAdapter;
 	ImageView mImageView;
 	View v2;
@@ -24,13 +25,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 	ArrayList<Integer> passFields = new ArrayList<> ();
 	ArrayList<Integer> numberFields = new ArrayList<> ();
 
+	HashMap<KeyHolderModel, ArrayList<String>> listDataChild = new HashMap<> ();
+
 	@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate (savedInstanceState);
 		getWindow ().setStatusBarColor (getResources ().getColor (R.color.anzac));
 		setContentView (R.layout.activity_main);
-		ArrayList<KeyHolderModel> keyHolderModels = new ArrayList<> ();
+		final ArrayList<KeyHolderModel> keyHolderModels = new ArrayList<> ();
 		KeyHolderModel keyHolder1 = new KeyHolderModel ("Omolara Adejuwon", "Everyday", "12:00pm to 3:00pm", "1");
 		KeyHolderModel keyHolder2 = new KeyHolderModel ("Adejumoke Adejuwon", "Everyday", "12:00pm to 3:00pm", "0");
 		KeyHolderModel keyHolder3 = new KeyHolderModel ("Oreoluwa Adejuwon", "Everyday", "12:00pm to 3:00pm", "1");
@@ -56,19 +59,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 		numberFields.add (R.id.no_8);
 		numberFields.add (R.id.no_9);
 
-		mCustomAdapter = new CustomAdapter (this, keyHolderModels);
-		keyHolderList = (ListView) findViewById (R.id.keyHoldersList);
+
+		keyHolderList = (ExpandableListView) findViewById (R.id.keyHoldersList);
 		mImageView = (ImageView) findViewById (R.id.lock);
+
+		mCustomAdapter = new CustomAdapter (this, keyHolderModels, listDataChild);
 		keyHolderList.setAdapter (mCustomAdapter);
 		mImageView.setOnClickListener (this);
 		LayoutInflater inflater = LayoutInflater.from (MainActivity.this);
 		v2 = inflater.inflate (R.layout.lock_screen, null, false);
 		cancel = (TextView) v2.findViewById (R.id.cancel);
 		cancel.setOnClickListener (this);
+// Listview Group click listener
+		keyHolderList.setOnGroupClickListener (new ExpandableListView.OnGroupClickListener () {
 
+			@Override
+			public boolean onGroupClick (ExpandableListView parent, View v,
+										 int groupPosition, long id) {
+				ArrayList<String> top250 = new ArrayList<> ();
+				top250.add ("You can handle " + keyHolderModels.get (groupPosition).getName () + " here");
+
+				listDataChild.put (keyHolderModels.get (groupPosition), top250);
+				mCustomAdapter.notifyDataSetChanged ();
+				return false;
+			}
+		});
 		for (int i : numberFields) {
 			v2.findViewById (i).setOnClickListener (this);
 		}
+
 	}
 
 	@Override
