@@ -1,0 +1,20 @@
+.accent {
+  color: green;
+}
+
+.gray {
+  color: gray;
+}
+
+span.byline, span.aside {
+  color: #bbb;
+}
+
+span.byline {
+  font-size: 80%;
+}
+
+span.aside {
+  font-size: 0.7em;
+  font-style: italic;
+}
