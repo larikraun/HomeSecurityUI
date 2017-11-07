@@ -1,4 +1,4 @@
 ## Getting Started With <span class="accent">Room</span>
-#### Omolara Adejuwon <br> @_larikraun
+#### <span class="byline">Omolara Adejuwon <br> @_larikraun</span>
 
 
